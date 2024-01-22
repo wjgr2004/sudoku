@@ -63,11 +63,9 @@ class Matrix:
         link.down.up = link.up
         removed.append(link)
 
-        c = link.col
-        if link is self.cols[c]:
-            self.cols[c] = link.down
+        self.cols[link.col] = link.down
 
-        self.col_lengths[c] -= 1
+        self.col_lengths[link.col] -= 1
 
     def add(self, link: Link) -> None:
         """
